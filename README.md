@@ -109,8 +109,8 @@ PORT=9000
 ## 📸 Screenshots
 
 ### 🔓 Login Page
-![Login Page](<img width="1920" height="863" alt="Screenshot 2026-06-15 103334" src="https://github.com/user-attachments/assets/66608692-6ef4-4fad-9005-add680233bb4" />
-)
+![Login Page]<img width="1920" height="863" alt="Screenshot 2026-06-15 103334" src="https://github.com/user-attachments/assets/66608692-6ef4-4fad-9005-add680233bb4" />
+
 
 ### 📝 Register Page
 ![Register Page](<img width="1920" height="869" alt="Screenshot 2026-06-15 103357" src="https://github.com/user-attachments/assets/96813a93-63e2-47a9-9a63-660c35b50a38" />
