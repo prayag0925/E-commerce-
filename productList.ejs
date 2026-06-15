@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Products - Ecommerce</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <%- include('partials/navbar') %>
+
+  <div class="container">
+    <h2>All Products</h2>
+
+    <form action="/products" method="GET" class="filter-form">
+      <label for="category">Filter by Category:</label>
+      <select name="category" id="category" onchange="this.form.submit()">
+        <option value="">All Categories</option>
+        <% categories.forEach(cat => { %>
+          <option value="<%= cat._id %>" <%= String(selectedCategory) === String(cat._id) ? 'selected' : '' %>>
+            <%= cat.name %>
+          </option>
+        <% }) %>
+      </select>
+      <button type="submit" class="btn-filter">Apply</button>
+    </form>
+
+    <% if (products.length === 0) { %>
+      <p class="empty-msg">No products found.</p>
+    <% } else { %>
+      <div class="product-grid">
+        <% products.forEach(product => { %>
+          <div class="product-card">
+            <span class="cat-badge"><%= product.category ? product.category.name : 'N/A' %></span>
+            <h3><%= product.name %></h3>
+            <p class="price">Rs. <%= product.price %></p>
+            <p class="added-by">Added by: <%= product.addedBy ? product.addedBy.username : 'Unknown' %></p>
+            <a href="/products/<%= product._id %>" class="btn-view">View Details</a>
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+  </div>
+</body>
+</html>

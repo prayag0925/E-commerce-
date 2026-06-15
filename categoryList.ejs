@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categories - Ecommerce</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <%- include('partials/navbar') %>
+
+  <div class="container">
+    <h2>Categories</h2>
+
+    <% if (typeof user !== 'undefined' && user && user.role === 'admin') { %>
+      <div class="form-container small-form">
+        <h3>Add New Category</h3>
+        <form action="/categories/add" method="POST">
+          <label for="name">Category Name</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="description">Description</label>
+          <input type="text" id="description" name="description">
+
+          <button type="submit" class="btn-submit">Add Category</button>
+        </form>
+      </div>
+    <% } %>
+
+    <% if (categories.length === 0) { %>
+      <p class="empty-msg">No categories found.</p>
+    <% } else { %>
+      <table class="category-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Products</th>
+            <% if (typeof user !== 'undefined' && user && user.role === 'admin') { %>
+              <th>Actions</th>
+            <% } %>
+          </tr>
+        </thead>
+        <tbody>
+          <% categories.forEach(cat => { %>
+            <tr>
+              <td><%= cat.name %></td>
+              <td><%= cat.description %></td>
+              <td><a href="/products?category=<%= cat._id %>">View Products</a></td>
+              <% if (typeof user !== 'undefined' && user && user.role === 'admin') { %>
+                <td>
+                  <a href="/categories/delete/<%= cat._id %>" class="btn-delete"
+                     onclick="return confirm('Delete this category?')">Delete</a>
+                </td>
+              <% } %>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } %>
+  </div>
+</body>
+</html>
