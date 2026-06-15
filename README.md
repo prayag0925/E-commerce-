@@ -113,41 +113,41 @@ PORT=9000
 
 
 ### 📝 Register Page
-![Register Page](<img width="1920" height="869" alt="Screenshot 2026-06-15 103357" src="https://github.com/user-attachments/assets/96813a93-63e2-47a9-9a63-660c35b50a38" />
-)
+![Register Page]<img width="1920" height="869" alt="Screenshot 2026-06-15 103357" src="https://github.com/user-attachments/assets/96813a93-63e2-47a9-9a63-660c35b50a38" />
+
 
 ### ➕ Add Product
-![Add Product](<img width="1920" height="876" alt="Screenshot 2026-06-15 225611" src="https://github.com/user-attachments/assets/c96982d8-ca41-4ed5-a631-d8caf1d8f16d" />
-)
+![Add Product]<img width="1920" height="876" alt="Screenshot 2026-06-15 225611" src="https://github.com/user-attachments/assets/c96982d8-ca41-4ed5-a631-d8caf1d8f16d" />
+
 
 ---
 
 ### 👑 Admin View
 
 **All Products (Admin)**
-![All Products Admin](<img width="1920" height="872" alt="Screenshot 2026-06-15 105947" src="https://github.com/user-attachments/assets/814ecda7-c608-487e-901f-0562629dd4af" />
-)
+![All Products Admin]<img width="1920" height="872" alt="Screenshot 2026-06-15 105947" src="https://github.com/user-attachments/assets/814ecda7-c608-487e-901f-0562629dd4af" />
+
 
 **My Products (Admin)**
-![My Products Admin](<img width="1920" height="873" alt="Screenshot 2026-06-15 113345" src="https://github.com/user-attachments/assets/a13a5bf6-4c79-4d5e-b822-ed98361b99f5" />
-)
+![My Products Admin]<img width="1920" height="873" alt="Screenshot 2026-06-15 113345" src="https://github.com/user-attachments/assets/a13a5bf6-4c79-4d5e-b822-ed98361b99f5" />
+
 
 **Categories (Admin) — can Add/Delete categories**
-![Categories Admin](<img width="1920" height="872" alt="Screenshot 2026-06-15 110215" src="https://github.com/user-attachments/assets/f995bb8f-c618-4a15-a309-a2e876673118" />
-)
+![Categories Admin]<img width="1920" height="872" alt="Screenshot 2026-06-15 110215" src="https://github.com/user-attachments/assets/f995bb8f-c618-4a15-a309-a2e876673118" />
+
 
 ---
 
 ### 👤 User View
 
 **All Products (User)**
-![All Products User](<img width="1920" height="873" alt="Screenshot 2026-06-15 111630" src="https://github.com/user-attachments/assets/bcb12381-fd7f-441e-bb6c-ef2fce8fd652" />
-)
+![All Products User]<img width="1920" height="873" alt="Screenshot 2026-06-15 111630" src="https://github.com/user-attachments/assets/bcb12381-fd7f-441e-bb6c-ef2fce8fd652" />
+
 
 **My Products (User)**
-![My Products User](<img width="1920" height="869" alt="Screenshot 2026-06-15 111702" src="https://github.com/user-attachments/assets/a4383ce0-316f-4896-95f2-9dc2578d41db" />
-)
+![My Products User]<img width="1920" height="869" alt="Screenshot 2026-06-15 111702" src="https://github.com/user-attachments/assets/a4383ce0-316f-4896-95f2-9dc2578d41db" />
+
 
 **Categories (User) — view only, no Add/Delete form**
-![Categories User](<img width="1920" height="882" alt="Screenshot 2026-06-15 111731" src="https://github.com/user-attachments/assets/f1b3fe9e-ff76-4d5d-b85b-042157ba4102" />
-)
+![Categories User]<img width="1920" height="882" alt="Screenshot 2026-06-15 111731" src="https://github.com/user-attachments/assets/f1b3fe9e-ff76-4d5d-b85b-042157ba4102" />
+
