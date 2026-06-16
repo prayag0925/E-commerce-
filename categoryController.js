@@ -1,6 +1,6 @@
 const Category = require('../models/Category');
 
-// GET /categories -> show all categories
+
 exports.getAllCategories = async (req, res) => {
   try {
     const categories = await Category.find();
@@ -11,7 +11,7 @@ exports.getAllCategories = async (req, res) => {
   }
 };
 
-// POST /categories/add -> add new category (admin only)
+
 exports.addCategory = async (req, res) => {
   try {
     const { name, description } = req.body;
@@ -31,7 +31,7 @@ exports.addCategory = async (req, res) => {
   }
 };
 
-// POST /categories/edit/:id -> update category (admin only)
+
 exports.updateCategory = async (req, res) => {
   try {
     const { name, description } = req.body;
@@ -43,7 +43,7 @@ exports.updateCategory = async (req, res) => {
   }
 };
 
-// GET /categories/delete/:id -> delete category (admin only)
+
 exports.deleteCategory = async (req, res) => {
   try {
     await Category.findByIdAndDelete(req.params.id);
