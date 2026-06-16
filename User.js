@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-// User Schema - stores username, hashed password, role and products added by user
+
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
