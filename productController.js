@@ -3,13 +3,13 @@ const Category = require('../models/Category');
 const User = require('../models/User');
 const mongoose = require('mongoose');
 
-// GET /products -> show all products (with optional category filter)
+
 exports.getAllProducts = async (req, res) => {
   try {
     const categories = await Category.find();
     const filter = {};
 
-    // Only apply the category filter if a valid category id was selected
+   
     if (req.query.category && mongoose.Types.ObjectId.isValid(req.query.category)) {
       filter.category = req.query.category;
     }
@@ -29,7 +29,7 @@ exports.getAllProducts = async (req, res) => {
   }
 };
 
-// GET /products/my-products -> show products added by logged-in user
+
 exports.getMyProducts = async (req, res) => {
   try {
     const products = await Product.find({ addedBy: req.user.id })
@@ -42,7 +42,7 @@ exports.getMyProducts = async (req, res) => {
   }
 };
 
-// GET /products/add -> show add product form
+
 exports.getAddProductForm = async (req, res) => {
   try {
     const categories = await Category.find();
@@ -53,7 +53,7 @@ exports.getAddProductForm = async (req, res) => {
   }
 };
 
-// POST /products/add -> add a new product for logged-in user
+
 exports.postAddProduct = async (req, res) => {
   try {
     const { name, description, price, category } = req.body;
@@ -68,7 +68,7 @@ exports.postAddProduct = async (req, res) => {
 
     const savedProduct = await newProduct.save();
 
-    // Add product reference to the user's products array (multiuser support)
+  
     await User.findByIdAndUpdate(req.user.id, {
       $push: { products: savedProduct._id }
     });
@@ -80,7 +80,7 @@ exports.postAddProduct = async (req, res) => {
   }
 };
 
-// GET /products/:id -> show single product detail
+
 exports.getProductItem = async (req, res) => {
   try {
     const product = await Product.findById(req.params.id)
@@ -98,7 +98,7 @@ exports.getProductItem = async (req, res) => {
   }
 };
 
-// GET /products/edit/:id -> show edit form (only owner or admin)
+
 exports.getEditProductForm = async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
@@ -119,7 +119,7 @@ exports.getEditProductForm = async (req, res) => {
   }
 };
 
-// POST /products/edit/:id -> update product (only owner or admin)
+
 exports.postUpdateProduct = async (req, res) => {
   try {
     const { name, description, price, category } = req.body;
@@ -146,7 +146,7 @@ exports.postUpdateProduct = async (req, res) => {
   }
 };
 
-// GET /products/delete/:id -> delete product (only owner or admin)
+
 exports.deleteProduct = async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
@@ -161,7 +161,7 @@ exports.deleteProduct = async (req, res) => {
 
     await Product.findByIdAndDelete(req.params.id);
 
-    // Remove product reference from owner's products array
+
     await User.findByIdAndUpdate(product.addedBy, {
       $pull: { products: product._id }
     });
