@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-// Product Schema - linked to a category and the user who added it
+
 const productSchema = new mongoose.Schema({
   name: {
     type: String,
