@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-// Verify JWT token from cookie and attach user info to request
+
 const verifyToken = (req, res, next) => {
   const token = req.cookies.token;
 
@@ -10,8 +10,8 @@ const verifyToken = (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded;        // { id, username, role }
-    res.locals.user = decoded; // make user available in all EJS views
+    req.user = decoded;        
+    res.locals.user = decoded; 
     next();
   } catch (err) {
     res.clearCookie('token');
@@ -19,7 +19,7 @@ const verifyToken = (req, res, next) => {
   }
 };
 
-// Allow access only to admin role
+
 const isAdmin = (req, res, next) => {
   if (req.user && req.user.role === 'admin') {
     return next();
