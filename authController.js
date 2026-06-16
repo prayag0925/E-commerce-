@@ -2,23 +2,23 @@ const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-// GET /register -> show registration form
+
 exports.getRegister = (req, res) => {
   res.render('register', { error: null });
 };
 
-// POST /register -> create new user
+
 exports.postRegister = async (req, res) => {
   try {
     const { username, password, role } = req.body;
 
-    // Check if username already exists
+  
     const existingUser = await User.findOne({ username });
     if (existingUser) {
       return res.render('register', { error: 'Username already exists' });
     }
 
-    // Hash password before saving
+  
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const newUser = new User({
@@ -35,12 +35,12 @@ exports.postRegister = async (req, res) => {
   }
 };
 
-// GET /login -> show login form
+
 exports.getLogin = (req, res) => {
   res.render('login', { error: null });
 };
 
-// POST /login -> authenticate user and issue JWT cookie
+
 exports.postLogin = async (req, res) => {
   try {
     const { username, password } = req.body;
@@ -55,17 +55,17 @@ exports.postLogin = async (req, res) => {
       return res.render('login', { error: 'Invalid username or password' });
     }
 
-    // Create JWT token with user id, username and role
+    
     const token = jwt.sign(
       { id: user._id, username: user.username, role: user.role },
       process.env.JWT_SECRET,
       { expiresIn: '1d' }
     );
 
-    // Send token as httpOnly cookie
+    
     res.cookie('token', token, {
       httpOnly: true,
-      maxAge: 24 * 60 * 60 * 1000 // 1 day
+      maxAge: 24 * 60 * 60 * 1000 
     });
 
     res.redirect('/products');
@@ -75,7 +75,7 @@ exports.postLogin = async (req, res) => {
   }
 };
 
-// GET /logout -> clear cookie and redirect to login
+
 exports.logout = (req, res) => {
   res.clearCookie('token');
   res.redirect('/login');
